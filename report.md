@@ -31,20 +31,19 @@ was a bit confusing because of it's lack of documentation, many moving parts and
 |-|-|-|-|-|-|-|-|-|
 |Jesper|3|2|1|1|3|1|3|2|
 |Hans|4|2|3|3|2|1|3|2|
-|Claudia|4|2|3|0.5|3|3|2|1|                                             
+|Claudia|4|2|4|0.5|4|4|2|1|                                             
 |Linus|4|2|3|1|3|1|1|2|
 |Adam|4|1|3|1|4|1|3|1| 
 
-- Due to the difficulties with the scrapy project most programming, resarch, and discussion was done during full group, or pair sessions, which is why the hour count is very similar between group members so far.
+- *Note* Due to the difficulties with the scrapy project most programming, resarch, and discussion was done during full group, or pair sessions, which is why the hour count is very similar between group members so far.
 
-For setting up tools and libraries (step 4), enumerate all dependencies
-you took care of and where you spent your time, if that time exceeds
-30 minutes.
+### For setting up tools and libraries (step 4), enumerate all dependencies you took care of and where you spent your time, if that time exceeds 30 minutes.
 
-- Linus step 4: Had issues with installing tox and getting it to run with a WSL on windows. Therefore had to
+- Linus: Had issues with installing tox and getting it to run with a WSL on windows. Therefore had to
 switch from from Git Bash to install Debian. From there I could just do a 'pip install tox' and then run the test with the tox command.
 
-- Hans step 4: I had issues with tox and incompatible versions of dependencies (specifically PyOpenSSL and crypto). Also issues with windows, switched to linux. 
+- Hans: I had issues with tox and incompatible versions of dependencies (specifically PyOpenSSL and crypto). Also issues with windows, switched to linux. 
+
 ## Overview of issue(s) and work done.
 
 Title: Average Respons Time in Stats
@@ -110,8 +109,22 @@ Note that when initially running all project tests:
 ## UML class diagram and its description
 
 ### UML diagram
+![image info](Images/UML_lab4.jpg)
 
-### Key changes/classes affected
+- A crawler object is passed to our ResponseTime extension, that is instantiated by the Crawler class.  
+- The Crawler class is the main entry point to the Scrapy API. Where we for instance get access to the recorded stats of the crawlers behaviour and can be also used to catch signlas, via the SignalManager.
+- The SignalManager is used to connect a reciever, i.e. the crawler, to a given signal. 
+- Signals are objects that notifies when a certain event occurs. In our case, our class ResponseTime, tries to catch the following singlas:
+    - spider_opened: Sent when a spider has been opened. 
+    - spider_closed: Sent when a spider has been closed. 
+    - request_reached_downloader: Sent when a Request has reached the downloader componen. 
+    - response_received: Sent when the Engine component has recieved a Response from the Downloader component. 
+- It is with the help of the signals that we are able to calculate the average response time of fetching the web pages.   
+- Spider objects (from the Spider class) are needed due to it being custom classes that the users of the framework writes to. It is via that class that users are able to define how a site should be scraped. 
+- The Settings class can be used to customize the behaviour of the system.
+- The StatsCollector class is used to record scraping stats, in our case recording the amount of responses received.   
+
+
 
 ### Optional (point 1): Architectural overview.
 Scrapy has 7 components that interact with each other. The components are: Scrapy Engine, Scheduler, Downloader, Spiders, Item Pipeline, Downloader Middlewares and Spider Middlewares. 
