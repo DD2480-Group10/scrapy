@@ -98,25 +98,20 @@ Note that when initially running all project tests:
 - Failed
 - Warnings
 
-
-| Test | Purpose |
-|------|---------|
-|      |         |
-|      |         |
-|      |         |
-|      |         |
-|      |         |
-
-
+### New feature after issue resolution
+| Feature | Issue | Commit | Purpose | Contributor | 
+|------|-------|--------|---------|-------------|
+|ResponseTime|#3|[commit](https://github.com/DD2480-Group10/scrapy/pull/18/commits/a8724c125adccea99688c7b36c36f808e759674f)|implement average response extension|Jesper|
 
 ### New test cases after issue resolution
-| Test | Issue | Branch | Purpose | Contributor | Test Pass/Fail |
-|------|-------|--------|---------|-------------|----------------|
-|      |       |        |         |             |                |
-|      |       |        |         |             |                |
-|      |       |        |         |             |                |
-|      |       |        |         |             |                |
-|      |       |        |         |             |                |
+*Note*: All tests are located in /tests/test_extension_averageresponse.py
+| Test | Issue | Commit | Purpose | Contributor | 
+|------|-------|--------|---------|-------------|
+| test_print_average| #12       | [commit](https://github.com/DD2480-Group10/scrapy/commit/660a070e22246ba717ee953192055fb13d8aac7a)  |  test that the log works    |    Hans         |                
+|   test_setting_disabled   |  #13     | [commit](https://github.com/DD2480-Group10/scrapy/commit/660a070e22246ba717ee953192055fb13d8aac7a)       |   ensure extension does not run when setting is disabled      |    Hans         |                
+|      |       |        |         |             |                
+|      |       |        |         |             |                
+|      |       |        |         |             |                
 
 
 ## UML class diagram and its description
