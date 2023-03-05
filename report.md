@@ -25,7 +25,7 @@ was a bit confusing because of it's lack of documentation, many moving parts and
 ## Effort spent
 | Group member | Plenary discussion | Discussion within group | Reading Documentation | Configuration and setup | Analyzing code | Writing documentation | Writing code | Running code |
 |-|-|-|-|-|-|-|-|-|
-|Jesper|3|2|1|1|3|1|3|2|
+|Jesper|3|2|1|1|0.5|1|3|2|
 |Hans|4|2|3|2|4|1|4|2|
 |Claudia|4|2|4|0.5|4|4|2|1|                                             
 |Linus|4|2|3|1|3|1|1|2|
@@ -45,6 +45,10 @@ switch from from Git Bash to install Debian. From there I could just do a 'pip i
 Title: Average Respons Time in Stats
 
 The chosen issue can be found [here](https://github.com/scrapy/scrapy/issues/4889), and entails logging the average response time for the scrapy stats. The issue suggests implementing a *standalone scrapy extension*. 
+
+## Why this issue is relevant
+
+This issue is a feature request that has several use cases concerning optimizing the framework. It was suggested by a contributor that this feature would be nice to have as an extentsion. We therefore judge this issue to be relevant to resolve.
 
 ## Requirements for the new feature or requirements affected by functionality being refactored
 
@@ -91,8 +95,8 @@ Note that when initially running all project tests:
 ### After added test cases
 - Passed
 - Skipped
-- 
--
+- Failed
+- Warnings
 
 
 | Test | Purpose |
