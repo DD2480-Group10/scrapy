@@ -1,9 +1,5 @@
 # Report for assignment 4
 
-This is a template for your report. You are free to modify it as needed.
-It is not required to use markdown for your report either, but the report
-has to be delivered in a standard, cross-platform format.
-
 ## Project
 
 Name: [Scrapy](https://github.com/DD2480-Group10/scrapy)
@@ -30,7 +26,7 @@ was a bit confusing because of it's lack of documentation, many moving parts and
 | Group member | Plenary discussion | Discussion within group | Reading Documentation | Configuration and setup | Analyzing code | Writing documentation | Writing code | Running code |
 |-|-|-|-|-|-|-|-|-|
 |Jesper|3|2|1|1|3|1|3|2|
-|Hans|4|2|3|3|2|1|3|2|
+|Hans|4|2|3|2|4|1|4|2|
 |Claudia|4|2|4|0.5|4|4|2|1|                                             
 |Linus|4|2|3|1|3|1|1|2|
 |Adam|4|1|3|1|4|1|3|1| 
@@ -56,10 +52,17 @@ The chosen issue can be found [here](https://github.com/scrapy/scrapy/issues/488
 The requirements for the issue are listed in the table below.
 | Requirement | ID | Title | Description |
 |-------------|----|-------|-------------|
-|Add extension averageresponse time|1|averageresponsetime|Log the average response time to scrapy stats via an extension|
-|       Add unit tests to extension      |  2  |      averagereresponsetime_test       | Test the extension
-|    Documentation         |  3  |   documentation    | document the extension, and corresponding tests           |
-|             |    |       |             |
+|Add extension averageresponse time|1|averageresponsetime|Log the average response time to scrapy stats via an extension.|
+|Add event listenes through signals|1.1|Signals|Wait for event to occur before data is processed. Needed to calculate invdividual response time.|
+|Calculate average response time|1.2|Calculate|Store and calculate the average response time.|
+|Write average response time to log|1.3|Log|Write the average response time to the info log.|
+|Add unit tests to extension|2| Average response time test | Test the extension
+|Test invalid settings|2.1|Invalid settings|Test that the extension does not run when the settings are disabed.|
+|Test single response|2.2|Single response|Test that a singe response is handled correctly.|
+|Test multiple responses|2.3|Multiple responses|Test that multiple responses are handled correctly.|
+|Test valid settings|2.4|Valid settings|Test that the extension is loaded but no average responstime is printed.|
+|Documentation |  3  | Documentation    | document the extension, and corresponding tests  in the report         |
+|||||
 
 
 Optional (point 3): trace tests to requirements.
@@ -85,6 +88,12 @@ Note that when initially running all project tests:
 - 315 Skipped
 - 20 Failed
 - 206 Warnings
+### After added test cases
+- Passed
+- Skipped
+- 
+-
+
 
 | Test | Purpose |
 |------|---------|
