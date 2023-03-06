@@ -25,7 +25,7 @@ was a bit confusing because of it's lack of documentation, many moving parts and
 ## Effort spent
 | Group member | Plenary discussion | Discussion within group | Reading Documentation | Configuration and setup | Analyzing code | Writing documentation | Writing code | Running code |
 |-|-|-|-|-|-|-|-|-|
-|Jesper|3|2|1|1|0.5|1|3|2|
+|Jesper|3|2|3|0.5|5|2|8|3|
 |Hans|4|2|3|2|4|1|4|2|
 |Claudia|4|2|4|0.5|4|4|2|1|                                             
 |Linus|4|2|3|1|3|1|1|2|
@@ -98,6 +98,8 @@ Note that when initially running all project tests:
 - Failed
 - Warnings
 
+# Contributions
+
 ### New feature after issue resolution
 | Feature | Issue | Commit | Purpose | Contributor | 
 |------|-------|--------|---------|-------------|
@@ -109,9 +111,7 @@ Note that when initially running all project tests:
 |------|-------|--------|---------|-------------|
 | test_print_average| #12       | [commit](https://github.com/DD2480-Group10/scrapy/commit/660a070e22246ba717ee953192055fb13d8aac7a)  |  test that the log works    |    Hans         |                
 |   test_setting_disabled   |  #13     | [commit](https://github.com/DD2480-Group10/scrapy/commit/660a070e22246ba717ee953192055fb13d8aac7a)       |   ensure extension does not run when setting is disabled      |    Hans         |                
-|      |       |        |         |             |                
-|      |       |        |         |             |                
-|      |       |        |         |             |                
+|      |       |        |         |             |                                
 
 
 ## UML class diagram and its description
@@ -157,11 +157,18 @@ Scrapy has 7 components that interact with each other. The components are: Scrap
 
 
 ### Optional (point 2): relation to design pattern(s).
+The extension averageresponse.py has the function from_crawler, that scrapy has defined from earlier.
+It's a function that is used in the framework. What it does is that is uses the crawler.signal where signal is the manager of the crawler.
+The object Crawler provides access to all of the other Scrapy core components.
+
+So from_crawlers is a class method meant to pass crawler objects to extensions and thereby hook their functionality
+onto Scrapy. A design patterns to easily attach extensions to the Scrapy project.
+
 
 ## Overall experience
 
 ### What are your main take-aways from this project? What did you learn?
-- That it is hard to find an open soruce project that works "out of the box".
+- That it is hard to find an open source project that works "out of the box".
 - That it is really important to have a clear and concise documentation. Because even if a project seems to be well documented, it can still be hard to grasp how the system works overall and how to contribute to it. 
 - That many issues that users report are often unclear and ambiguous.
 
