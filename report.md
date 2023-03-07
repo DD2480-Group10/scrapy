@@ -117,9 +117,11 @@ refactoring).
 *Note*: All tests are located in /tests/test_extension_averageresponse.py
 | Test | Issue | Commit | Purpose | Contributor | 
 |------|-------|--------|---------|-------------|
-| test_print_average| #12       | [commit](https://github.com/DD2480-Group10/scrapy/commit/660a070e22246ba717ee953192055fb13d8aac7a)  |  test that the log works    |    Hans         |                
-|   test_setting_disabled   |  #13     | [commit](https://github.com/DD2480-Group10/scrapy/commit/660a070e22246ba717ee953192055fb13d8aac7a)       |   ensure extension does not run when setting is disabled      |    Hans         |                
-|      |       |        |         |             |                                
+| test_print_average| #12| [commit](https://github.com/DD2480-Group10/scrapy/commit/660a070e22246ba717ee953192055fb13d8aac7a)  |  test that the log works    |    Hans         |                
+|   test_setting_disabled   |  #36   | [commit](https://github.com/DD2480-Group10/scrapy/commit/660a070e22246ba717ee953192055fb13d8aac7a)       |   ensure extension does not run when setting is disabled  | Hans  |                
+| test_no_response |#13    |[commit](https://github.com/scrapy/scrapy/commit/a2f209ff5934093dc1b6310d7b02ff92a2f91a96)    | test that no log is made when no response is recived |  Adam|
+|test_invalid_settings|#31|[commit](https://github.com/scrapy/scrapy/commit/5b2f66a3cd736727f9e96b032ca55164b6929f2e)|Test that the extesion does not run when the settigs have a invalid configuration|Adam|                      
+|test_delayed_response|#27|[commit](https://github.com/scrapy/scrapy/commit/e9511cb19d364242e87995e04f352499bde0f6df)|Test that the extension works for delayed respones|Linus|          
 
 
 ## UML class diagram and its description
