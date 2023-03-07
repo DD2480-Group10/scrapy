@@ -104,6 +104,7 @@ Note that when initially running all project tests:
 | Feature | Issue | Commit | Purpose | Contributor | 
 |------|-------|--------|---------|-------------|
 |ResponseTime|#3|[commit](https://github.com/DD2480-Group10/scrapy/pull/18/commits/a8724c125adccea99688c7b36c36f808e759674f)|implement average response extension|Jesper|
+|||||
 
 ### New test cases after issue resolution
 *Note*: All tests are located in /tests/test_extension_averageresponse.py
@@ -111,7 +112,7 @@ Note that when initially running all project tests:
 |------|-------|--------|---------|-------------|
 | test_print_average| #12       | [commit](https://github.com/DD2480-Group10/scrapy/commit/660a070e22246ba717ee953192055fb13d8aac7a)  |  test that the log works    |    Hans         |                
 |   test_setting_disabled   |  #13     | [commit](https://github.com/DD2480-Group10/scrapy/commit/660a070e22246ba717ee953192055fb13d8aac7a)       |   ensure extension does not run when setting is disabled      |    Hans         |                
-|      |       |        |         |             |                                
+| test delayed spider response| #27 |[commit](https://github.com/DD2480-Group10/scrapy/pull/28/commits/e9511cb19d364242e87995e04f352499bde0f6df) |  test the response for delayed spiders   | Linus |                                
 
 
 ## UML class diagram and its description
@@ -178,7 +179,6 @@ After looking at the table "Checklist for Team" at page 52 in the Essence standa
 From the earlier project several parts from the sections "Seeded" and "Formed" has been fulfilled. Since the first open-sourced project that we choose to work with, JavaParser, was quite confusing and difficult. Which more or less forced us to understand more how each of us work best and what we need to do to help each other out. Then with this second project, Scrapy, we have spent a lot of time working together to understand how the framework works, read up on the documentation, finding issues that we can work on etc. Which has helped us completly fulfill the parts on the "Seeded" and "Formed" states and some parts of the "Collaborating" state. 
 
 ### Optional (point 6): How would you put your work in context with best software engineering practice?
-
 When looking at the checklist for "Software System" alpha in the solution area and try to relate it to our work, we see that we check most parts of the "Architecture Selected" state. One of the checklist items that we haven't really thought about when working on project is "Key technical risks agrred to" in the "Architecture Selected". Mainly due to time constraints. Another checklist item that we haven't thought about is "System boundary is known". Overall, we haven't thought about security related issues when developing our patch to the open source project. 
 
 On the other hand when we look at the alpha "Work" in the endeavor area, we have can see that we fullfill most states and are right now on the "Under Control" state. Of course there are some points in the previous states that we can't achieve, due to this being a university course and not a real life project, e.g. "Funding to start the work is in place". Therefore, we have disregarded those types of checklist items, when assessing our work. 
