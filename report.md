@@ -76,7 +76,10 @@ Optional (point 3): trace tests to requirements.
 
 ### Patch
 
-The patch can be found on branch "feat/#3". Also the git command "git diff master feat/#3" can be used. 
+The patch can be found on branch master. The new files are 
+tests/test_extension_averageresponse.py and scrapy/extensions/averageresponse.py.
+
+All automated test that passed before the patch also pass afterwards.
 
 Optional (point 4): the patch is clean.
 
