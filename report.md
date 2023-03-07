@@ -29,7 +29,7 @@ was a bit confusing because of it's lack of documentation, many moving parts and
 |Hans|4|2|3|2|4|1|4|2|
 |Claudia|4|2|4|0.5|4|4|3|1|                                             
 |Linus|4|2|3|1|3|1|1|2|
-|Adam|4|1|3|1|6|1|7|1| 
+|Adam|4|1|3|1|6|1|7|1|
 
 - *Note* Due to the difficulties with the scrapy project most programming, resarch, and discussion was done during full group, or pair sessions, which is why the hour count is very similar between group members so far.
 
@@ -104,18 +104,14 @@ refactoring).
 - 20 XFailed
 - 207 Warnings
 ![image](Images/after.png)
-
 # Contributions
 
 ### New feature after issue resolution
 | Feature | Issue | Commit | Purpose | Contributor | 
 |------|-------|--------|---------|-------------|
 |ResponseTime|#3|[commit](https://github.com/DD2480-Group10/scrapy/pull/18/commits/a8724c125adccea99688c7b36c36f808e759674f)|implement average response extension|Jesper|
-<<<<<<< HEAD
-|||||
-=======
 |ResponseTime enabling check|#29|[commit](https://github.com/DD2480-Group10/scrapy/pull/30/commits/bb7b0c4d11f09ec2af31f829d786dcdb8c6632a0)|This was added so that our extension only is used after a user has enabled it in the settings.|Claudia|
->>>>>>> 2e53a1c191d7c251e2221939c08f8d6e25d3b13c
+|||||
 
 ### New test cases after issue resolution
 *Note*: All tests are located in /tests/test_extension_averageresponse.py
@@ -142,7 +138,7 @@ refactoring).
 - It is with the help of the signals that we are able to calculate the average response time of fetching the web pages.   
 - Spider objects (from the Spider class) are needed due to it being custom classes that the users of the framework writes to. It is via that class that users are able to define how a site should be scraped. 
 - The Settings class can be used to customize the behaviour of the system.
-- The StatsCollector class is used to record scraping stats, in our case recording the amount of responses received.   
+- The StatsCollector class is used to record scraping stats, in our case recording the amount of responses received.  
 
 
 
