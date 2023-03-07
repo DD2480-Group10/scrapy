@@ -28,7 +28,7 @@ was a bit confusing because of it's lack of documentation, many moving parts and
 |Jesper|3|2|3|0.5|5|2|8|3|
 |Hans|4|2|3|2|4|1|4|2|
 |Claudia|4|2|4|0.5|4|5|3|1|                                             
-|Linus|4|2|3|1|3|1|1|2|
+|Linus|4|2|3|1|3|1|5|2|
 |Adam|4|1|3|1|6|1|7|1|
 
 - *Note* Due to the difficulties with the scrapy project most programming, resarch, and discussion was done during full group, or pair sessions, which is why the hour count is very similar between group members so far.
@@ -107,11 +107,11 @@ refactoring).
 # Contributions
 
 ### New feature after issue resolution
-| Feature | Issue | Commit | Purpose | Contributor | 
-|------|-------|--------|---------|-------------|
-|ResponseTime|#3|[commit](https://github.com/DD2480-Group10/scrapy/pull/18/commits/a8724c125adccea99688c7b36c36f808e759674f)|implement average response extension|Jesper|
-|ResponseTime enabling check|#29|[commit](https://github.com/DD2480-Group10/scrapy/pull/30/commits/bb7b0c4d11f09ec2af31f829d786dcdb8c6632a0)|This was added so that our extension only is used after a user has enabled it in the settings.|Claudia|
-|||||
+| Feature | Issue | Commit | Purpose | Requirement ID |Contributor|
+|------|-------|--------|---------|-------------|-------------|
+|ResponseTime|#3|[commit](https://github.com/DD2480-Group10/scrapy/pull/18/commits/a8724c125adccea99688c7b36c36f808e759674f)|implement average response extension|1-1.3|Jesper|
+|ResponseTime enabling check|#29|[commit](https://github.com/DD2480-Group10/scrapy/pull/30/commits/bb7b0c4d11f09ec2af31f829d786dcdb8c6632a0)|This was added so that our extension only is used after a user has enabled it in the settings.|2.5|Claudia|
+||||||
 
 ### New test cases after issue resolution.
 *Note*: All tests are located in /tests/test_extension_averageresponse.py.
