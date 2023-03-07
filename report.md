@@ -27,7 +27,7 @@ was a bit confusing because of it's lack of documentation, many moving parts and
 |-|-|-|-|-|-|-|-|-|
 |Jesper|3|2|3|0.5|5|2|8|3|
 |Hans|4|2|3|2|4|1|4|2|
-|Claudia|4|2|4|0.5|4|4|3|1|                                             
+|Claudia|4|2|4|0.5|4|5|3|1|                                             
 |Linus|4|2|3|1|3|1|1|2|
 |Adam|4|1|3|1|6|1|7|1|
 
@@ -70,7 +70,6 @@ The requirements for the issue are listed in the table below.
 |||||
 
 
-Optional (point 3): trace tests to requirements.
 
 ## Code changes
 
@@ -116,15 +115,18 @@ refactoring).
 |ResponseTime enabling check|#29|[commit](https://github.com/DD2480-Group10/scrapy/pull/30/commits/bb7b0c4d11f09ec2af31f829d786dcdb8c6632a0)|This was added so that our extension only is used after a user has enabled it in the settings.|Claudia|
 |||||
 
-### New test cases after issue resolution
-*Note*: All tests are located in /tests/test_extension_averageresponse.py
-| Test | Issue | Commit | Purpose | Contributor | 
-|------|-------|--------|---------|-------------|
-| test_print_average| #12| [commit](https://github.com/DD2480-Group10/scrapy/commit/660a070e22246ba717ee953192055fb13d8aac7a)  |  test that the log works    |    Hans         |                
-|   test_setting_disabled   |  #36   | [commit](https://github.com/DD2480-Group10/scrapy/commit/660a070e22246ba717ee953192055fb13d8aac7a)       |   ensure extension does not run when setting is disabled  | Hans  |                
-| test_no_response |#13    |[commit](https://github.com/scrapy/scrapy/commit/a2f209ff5934093dc1b6310d7b02ff92a2f91a96)    | test that no log is made when no response is recived |  Adam|
-|test_invalid_settings|#31|[commit](https://github.com/scrapy/scrapy/commit/5b2f66a3cd736727f9e96b032ca55164b6929f2e)|Test that the extesion does not run when the settigs have a invalid configuration|Adam|                      
-|test_delayed_response|#27|[commit](https://github.com/scrapy/scrapy/commit/e9511cb19d364242e87995e04f352499bde0f6df)|Test that the extension works for delayed respones|Linus|                                             
+### New test cases after issue resolution.
+*Note*: All tests are located in /tests/test_extension_averageresponse.py.
+
+*Note*: The test cases that we have added are traced back to our requriements (Optional (point 3): trace tests to requirements).  
+
+| Test | git issue | Commit | Purpose | Requirment ID |Contributor | 
+|------|-------|--------|---------|-------------|----| 
+| test_print_average| #12| [commit](https://github.com/DD2480-Group10/scrapy/commit/660a070e22246ba717ee953192055fb13d8aac7a)  |  test that the log works    | 2.2 |    Hans         |                
+|   test_setting_disabled   |  #36   | [commit](https://github.com/DD2480-Group10/scrapy/commit/660a070e22246ba717ee953192055fb13d8aac7a)       |   ensure extension does not run when setting is disabled  | 2.5 | Hans  |                
+| test_no_response |#13    |[commit](https://github.com/scrapy/scrapy/commit/a2f209ff5934093dc1b6310d7b02ff92a2f91a96)    | test that no log is made when no response is recived | 2.4 |  Adam|
+|test_invalid_settings|#31|[commit](https://github.com/scrapy/scrapy/commit/5b2f66a3cd736727f9e96b032ca55164b6929f2e)|Test that the extesion does not run when the settigs have a invalid configuration|2.1| Adam|                      
+|test_delayed_response|#27|[commit](https://github.com/scrapy/scrapy/commit/e9511cb19d364242e87995e04f352499bde0f6df)|Test that the extension works for delayed respones|2.3| Linus|                                             
 
 ## UML class diagram and its description
 
@@ -147,7 +149,7 @@ refactoring).
 
 
 ### Optional (point 1): Architectural overview.
-Scrapy has 7 components that interact with each other. The components are: Scrapy Engine, Scheduler, Downloader, Spiders, Item Pipeline, Downloader Middlewares and Spider Middlewares. 
+Scrapy is a a framework that is used to extract structured data from websites. It consits of 7 components that interact with each other. These components are: Scrapy Engine, Scheduler, Downloader, Spiders, Item Pipeline, Downloader Middlewares and Spider Middlewares. 
 
 - Scrapy engine: The engine is responsible for the data flow between all the components. It handles the Requests and Responses given from the different components. 
 
@@ -169,13 +171,7 @@ Scrapy has 7 components that interact with each other. The components are: Scrap
 
 
 ### Optional (point 2): relation to design pattern(s).
-The extension averageresponse.py has the function from_crawler, that scrapy has defined from earlier.
-It's a function that is used in the framework. What it does is that is uses the crawler.signal where signal is the manager of the crawler.
-The object Crawler provides access to all of the other Scrapy core components.
-
-So from_crawlers is a class method meant to pass crawler objects to extensions and thereby hook their functionality
-onto Scrapy. A design patterns to easily attach extensions to the Scrapy project.
-
+To write your own extension to Scrapy you need to write a class method called from_crawler to be able to access the systems different core components. The from_crawler method recieves a Crawler instance which let's you access things such as settings and signals. Therefore this function is something that is used in our implementation of a average response time extension. This class method is a so called factory method, which is a creational design pattern. Due to it providing an interface for creating objects from a superclass and at the same time allowing our subclass to alter the type of object that is being created. In our case the from_crawler method creates a average response time extension object.
 
 ## Overall experience
 
@@ -193,3 +189,19 @@ From the earlier project several parts from the sections "Seeded" and "Formed" h
 When looking at the checklist for "Software System" alpha in the solution area and try to relate it to our work, we see that we check most parts of the "Architecture Selected" state. One of the checklist items that we haven't really thought about when working on project is "Key technical risks agrred to" in the "Architecture Selected". Mainly due to time constraints. Another checklist item that we haven't thought about is "System boundary is known". Overall, we haven't thought about security related issues when developing our patch to the open source project. 
 
 On the other hand when we look at the alpha "Work" in the endeavor area, we have can see that we fullfill most states and are right now on the "Under Control" state. Of course there are some points in the previous states that we can't achieve, due to this being a university course and not a real life project, e.g. "Funding to start the work is in place". Therefore, we have disregarded those types of checklist items, when assessing our work. 
+
+
+## Points for P+ that we are aiming for
+-  "1. The architecture and purpose of the system are presented in an overview of about 1–1.5 pages; consider
+using a diagram". Check under heading: "Optional (point 1): Architectural overview".
+- "2. Updates in the source are put into context with the overall software architecture and discussed, relating
+them to design patterns and/or refactoring patterns". Check under heading: "Optional (point 2): relation to design pattern(s)".
+- "3. Relevant test cases (existing tests and updated/new tests related to the refactored code) are traced to
+requirements." Check requriments table and the table under the heading "New test cases after issue resolution".  
+- "4. Your patch is clean in that it (a) removes but does not comment out obsolete code and (b) does not
+produce extraneous output that is not required for your task (such as debug output) and (c) does not
+add unnecessary whitespace changes (such as adding or removing empty lines)." 
+- "6. You can argue critically about the benefits, drawbacks, and limitations of your work carried out, in
+the context of current software engineering practice, such as the SEMAT kernel (covering alphas other
+than Team/Way of Working)." Check under heading: "Optional (point 6): How would you put your work in context with best software engineering practice?".
+
