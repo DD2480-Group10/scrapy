@@ -29,7 +29,7 @@ was a bit confusing because of it's lack of documentation, many moving parts and
 |Hans|4|2|3|2|4|1|4|2|
 |Claudia|4|2|4|0.5|4|4|3|1|                                             
 |Linus|4|2|3|1|3|1|1|2|
-|Adam|4|1|3|1|4|1|3|1| 
+|Adam|4|1|3|1|6|1|7|1| 
 
 - *Note* Due to the difficulties with the scrapy project most programming, resarch, and discussion was done during full group, or pair sessions, which is why the hour count is very similar between group members so far.
 
@@ -61,10 +61,11 @@ The requirements for the issue are listed in the table below.
 |Calculate average response time|1.2|Calculate|Store and calculate the average response time.|
 |Write average response time to log|1.3|Log|Write the average response time to the info log.|
 |Add unit tests to extension|2| Average response time test | Test the extension
-|Test invalid settings|2.1|Invalid settings|Test that the extension does not run when the settings are disabed.|
-|Test single response|2.2|Single response|Test that a singe response is handled correctly.|
-|Test multiple responses|2.3|Multiple responses|Test that multiple responses are handled correctly.|
-|Test valid settings|2.4|Valid settings|Test that the extension is loaded but no average responstime is printed.|
+|Test invalid settings|2.1|Invalid settings|Test that the extension does not run when the settings are invalid.|
+|Test single response|2.2|Print average|Test that a singe response is handled correctly.|
+|Test delayed response|2.3|Delayed response|Test that delayed responses are handled correctly.|
+|Test no response|2.4|No response|Test that the extension is loaded but no average responstime is printed.|
+|Test disabled settings|2.5|Disabled settings|Test that the extension does not run when the settings are disabled|
 |Documentation |  3  | Documentation    | document the extension, and corresponding tests  in the report         |
 |||||
 
