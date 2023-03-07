@@ -29,7 +29,7 @@ was a bit confusing because of it's lack of documentation, many moving parts and
 |Hans|4|2|3|2|4|1|4|2|
 |Claudia|4|2|4|0.5|4|4|3|1|                                             
 |Linus|4|2|3|1|3|1|1|2|
-|Adam|4|1|3|1|6|1|7|1| 
+|Adam|4|1|3|1|6|1|7|1|
 
 - *Note* Due to the difficulties with the scrapy project most programming, resarch, and discussion was done during full group, or pair sessions, which is why the hour count is very similar between group members so far.
 
@@ -104,7 +104,6 @@ refactoring).
 - 20 XFailed
 - 207 Warnings
 ![image](Images/after.png)
-
 # Contributions
 
 ### New feature after issue resolution
@@ -112,6 +111,7 @@ refactoring).
 |------|-------|--------|---------|-------------|
 |ResponseTime|#3|[commit](https://github.com/DD2480-Group10/scrapy/pull/18/commits/a8724c125adccea99688c7b36c36f808e759674f)|implement average response extension|Jesper|
 |ResponseTime enabling check|#29|[commit](https://github.com/DD2480-Group10/scrapy/pull/30/commits/bb7b0c4d11f09ec2af31f829d786dcdb8c6632a0)|This was added so that our extension only is used after a user has enabled it in the settings.|Claudia|
+|||||
 
 ### New test cases after issue resolution
 *Note*: All tests are located in /tests/test_extension_averageresponse.py
@@ -121,8 +121,7 @@ refactoring).
 |   test_setting_disabled   |  #36   | [commit](https://github.com/DD2480-Group10/scrapy/commit/660a070e22246ba717ee953192055fb13d8aac7a)       |   ensure extension does not run when setting is disabled  | Hans  |                
 | test_no_response |#13    |[commit](https://github.com/scrapy/scrapy/commit/a2f209ff5934093dc1b6310d7b02ff92a2f91a96)    | test that no log is made when no response is recived |  Adam|
 |test_invalid_settings|#31|[commit](https://github.com/scrapy/scrapy/commit/5b2f66a3cd736727f9e96b032ca55164b6929f2e)|Test that the extesion does not run when the settigs have a invalid configuration|Adam|                      
-|test_delayed_response|#27|[commit](https://github.com/scrapy/scrapy/commit/e9511cb19d364242e87995e04f352499bde0f6df)|Test that the extension works for delayed respones|Linus|          
-
+|test_delayed_response|#27|[commit](https://github.com/scrapy/scrapy/commit/e9511cb19d364242e87995e04f352499bde0f6df)|Test that the extension works for delayed respones|Linus|                                             
 
 ## UML class diagram and its description
 
@@ -140,7 +139,7 @@ refactoring).
 - It is with the help of the signals that we are able to calculate the average response time of fetching the web pages.   
 - Spider objects (from the Spider class) are needed due to it being custom classes that the users of the framework writes to. It is via that class that users are able to define how a site should be scraped. 
 - The Settings class can be used to customize the behaviour of the system.
-- The StatsCollector class is used to record scraping stats, in our case recording the amount of responses received.   
+- The StatsCollector class is used to record scraping stats, in our case recording the amount of responses received.  
 
 
 
@@ -188,7 +187,6 @@ After looking at the table "Checklist for Team" at page 52 in the Essence standa
 From the earlier project several parts from the sections "Seeded" and "Formed" has been fulfilled. Since the first open-sourced project that we choose to work with, JavaParser, was quite confusing and difficult. Which more or less forced us to understand more how each of us work best and what we need to do to help each other out. Then with this second project, Scrapy, we have spent a lot of time working together to understand how the framework works, read up on the documentation, finding issues that we can work on etc. Which has helped us completly fulfill the parts on the "Seeded" and "Formed" states and some parts of the "Collaborating" state. 
 
 ### Optional (point 6): How would you put your work in context with best software engineering practice?
-
 When looking at the checklist for "Software System" alpha in the solution area and try to relate it to our work, we see that we check most parts of the "Architecture Selected" state. One of the checklist items that we haven't really thought about when working on project is "Key technical risks agrred to" in the "Architecture Selected". Mainly due to time constraints. Another checklist item that we haven't thought about is "System boundary is known". Overall, we haven't thought about security related issues when developing our patch to the open source project. 
 
 On the other hand when we look at the alpha "Work" in the endeavor area, we have can see that we fullfill most states and are right now on the "Under Control" state. Of course there are some points in the previous states that we can't achieve, due to this being a university course and not a real life project, e.g. "Funding to start the work is in place". Therefore, we have disregarded those types of checklist items, when assessing our work. 
