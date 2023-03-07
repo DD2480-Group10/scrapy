@@ -91,21 +91,19 @@ refactoring).
 
 ### Existing test cases
 *Note* when initially running all project tests we got the following:
-- 2950 Passed
-- 315 Skipped
-- 1 Failed
+- 2954 Passed
+- 312 Skipped
 - 20 XFailed
-- 206 Warnings
-![image](Images/before.png)
+- 210 Warnings
+![image](Images/pre.png)
 
 ### After added test cases
 *Note* after adding our test and ran all project tests we got the following:
-- 2955 Passed
-- 315 Skipped
-- 1 Failed
+- 2959 Passed
+- 312 Skipped
 - 20 XFailed
-- 207 Warnings
-![image](Images/after.png)
+- 210 Warnings
+![image](Images/post.png)
 # Contributions
 
 ### New feature after issue resolution
