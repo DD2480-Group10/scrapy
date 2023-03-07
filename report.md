@@ -27,7 +27,7 @@ was a bit confusing because of it's lack of documentation, many moving parts and
 |-|-|-|-|-|-|-|-|-|
 |Jesper|3|2|3|0.5|5|2|8|3|
 |Hans|4|2|3|2|4|1|4|2|
-|Claudia|4|2|4|0.5|4|4|2|1|                                             
+|Claudia|4|2|4|0.5|4|4|3|1|                                             
 |Linus|4|2|3|1|3|1|1|2|
 |Adam|4|1|3|1|4|1|3|1| 
 
@@ -87,16 +87,22 @@ Overall results with link to a copy or excerpt of the logs (before/after
 refactoring).
 
 ### Existing test cases
-Note that when initially running all project tests:
-- 2951 Passed
+*Note* when initially running all project tests we got the following:
+- 2950 Passed
 - 315 Skipped
-- 20 Failed
+- 1 Failed
+- 20 XFailed
 - 206 Warnings
+![image](Images/before.png)
+
 ### After added test cases
-- Passed
-- Skipped
-- Failed
-- Warnings
+*Note* after adding our test and ran all project tests we got the following:
+- 2955 Passed
+- 315 Skipped
+- 1 Failed
+- 20 XFailed
+- 207 Warnings
+![image](Images/after.png)
 
 # Contributions
 
@@ -104,7 +110,11 @@ Note that when initially running all project tests:
 | Feature | Issue | Commit | Purpose | Contributor | 
 |------|-------|--------|---------|-------------|
 |ResponseTime|#3|[commit](https://github.com/DD2480-Group10/scrapy/pull/18/commits/a8724c125adccea99688c7b36c36f808e759674f)|implement average response extension|Jesper|
+<<<<<<< HEAD
 |||||
+=======
+|ResponseTime enabling check|#29|[commit](https://github.com/DD2480-Group10/scrapy/pull/30/commits/bb7b0c4d11f09ec2af31f829d786dcdb8c6632a0)|This was added so that our extension only is used after a user has enabled it in the settings.|Claudia|
+>>>>>>> 2e53a1c191d7c251e2221939c08f8d6e25d3b13c
 
 ### New test cases after issue resolution
 *Note*: All tests are located in /tests/test_extension_averageresponse.py
