@@ -1,11 +1,3 @@
-import json
-import logging
-import unittest
-from ipaddress import IPv4Address
-from socket import gethostbyname
-from urllib.parse import urlparse
-import scrapy
-
 from testfixtures import LogCapture
 from twisted.internet import defer
 from twisted.trial.unittest import TestCase
