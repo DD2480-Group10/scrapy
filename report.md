@@ -2,7 +2,7 @@
 
 ## Project
 
-Name: [Scrapy](https://github.com/DD2480-Group10/scrapy)
+Name: [Scrapy](https://github.com/scrapy/scrapy)
 
 ### One or two sentences describing it
 Scrapy is a python framework that can be used to crawl websites and extract data from their pages.
@@ -67,7 +67,6 @@ The requirements for the issue are listed in the table below.
 |Test no response|2.4|No response|Test that the extension is loaded but no average responstime is printed.|
 |Test disabled settings|2.5|Disabled settings|Test that the extension does not run when the settings are disabled|
 |Documentation |  3  | Documentation    | document the extension, and corresponding tests  in the report         |
-|||||
 
 
 
@@ -111,7 +110,6 @@ refactoring).
 |------|-------|--------|---------|-------------|-------------|
 |ResponseTime|#3|[commit](https://github.com/DD2480-Group10/scrapy/pull/18/commits/a8724c125adccea99688c7b36c36f808e759674f)|implement average response extension|1-1.3|Jesper|
 |ResponseTime enabling check|#29|[commit](https://github.com/DD2480-Group10/scrapy/pull/30/commits/bb7b0c4d11f09ec2af31f829d786dcdb8c6632a0)|This was added so that our extension only is used after a user has enabled it in the settings.|2.5|Claudia|
-||||||
 
 ### New test cases after issue resolution.
 *Note*: All tests are located in /tests/test_extension_averageresponse.py.
